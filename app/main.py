@@ -91,16 +91,16 @@ app.add_middleware(  #CORS = > Cross Origin Resource Sharing => Used to make a r
 models.Base.metadata.create_all(bind=engine) #ORM=>SQLAlchemy
 
 #Connecting with our Postgres Database=>will only need if we want to use Real SQL Queries and not ORM's
-while True :
-    try:
-        conn = psycopg2.connect(host='localhost',database='fastapi',user='postgres',password='nits007',cursor_factory=RealDictCursor)
-        cursor = conn.cursor()
-        print("Connected")
-        break
-    except Exception as error :
-        print("Failed connecting to database")
-        print("Error : " , error)
-        time.sleep(2)
+# while True :
+#     try:
+#         conn = psycopg2.connect(host='localhost',database='fastapi',user='postgres',password='nits007',cursor_factory=RealDictCursor)
+#         cursor = conn.cursor()
+#         print("Connected")
+#         break
+#     except Exception as error :
+#         print("Failed connecting to database")
+#         print("Error : " , error)
+#         time.sleep(2)
 
 app.include_router(post.router)  #including the 2 routes from different files
 app.include_router(user.router)
