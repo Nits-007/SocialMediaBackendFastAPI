@@ -2,11 +2,11 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings) :  #Making class for environment variables
-    database_hostname : str
-    database_port : str
-    database_password : str 
-    database_name : str
-    database_username : str
+   database_hostname: Optional[str] = None
+    database_port: Optional[str] = None
+    database_password: Optional[str] = None
+    database_name: Optional[str] = None
+    database_username: Optional[str] = None
     secret_key : str 
     algorithm : str
     access_token_expire_minutes : int
