@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 
 class Settings(BaseSettings) :  #Making class for environment variables
